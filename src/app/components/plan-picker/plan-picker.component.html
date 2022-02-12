@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div *ngIf="hiddenPlan !== Plan.starter" class="col-12 col-md-4">
+            <div class="card">
+                <h5 class="card-header">Starter</h5>
+                <div class="card-body">
+                    <h5 class="card-title">$20/month</h5>
+                    <p class="card-text">Unleash the power of automated chats 24x7.</p>
+                </div>
+                <div class="card-footer"><button class="btn btn-primary" (click)="selectPlan(Plan.starter)"> Subscribe</button></div>
+            </div>
+        </div>
+        <div *ngIf="hiddenPlan !== Plan.standard" class="col-12 col-md-4">
+            <div class="card">
+                <h5 class="card-header">Standard</h5>
+                <div class="card-body">
+                    <h5 class="card-title">$80/month</h5>
+                    <p class="card-text">Advanced AI for next level chat automation.</p>
+                </div>
+                <div class="card-footer"><button class="btn btn-primary" (click)="selectPlan(Plan.standard)"> Subscribe</button></div>
+            </div>
+        </div>
+        <div *ngIf="hiddenPlan !== Plan.plus" class="col-12 col-md-4">
+            <div class="card">
+                <h5 class="card-header">Plus</h5>
+                <div class="card-body">
+                    <h5 class="card-title">$240/month</h5>
+                    <p class="card-text">Automation plus enterprise-grade features.</p>
+                </div>
+                <div class="card-footer"><button class="btn btn-primary" (click)="selectPlan(Plan.plus)"> Subscribe</button></div>
+            </div>
+        </div>
+    </div>
+</div>

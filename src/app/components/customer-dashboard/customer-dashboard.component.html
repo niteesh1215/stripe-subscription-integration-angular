@@ -1,0 +1,21 @@
+<div class="container mt-3">
+    <h5>Customer Id : {{customerId}}</h5>
+    <h5>Subscription Id : {{subscriptionId}}</h5>
+    <h5>Plan: {{plan}}</h5>
+    <pre style="height: 300px;">Subscription details: {{subscriptionDetails | json}}</pre>
+    <br><br>
+    <div style="display: flex; justify-content: space-evenly;">
+        <!-- <button class="btn btn-primary" (click)="openStripeCustomerDashboard()">Manage Billing</button> -->
+        <button class="btn btn-warning" (click)="shouldShowPlanPicker = true;">Change Subscription</button>
+        <button class="btn btn-danger" (click)="cancelSubscription()">Cancel Subscription</button>
+        <button class="btn btn-info" (click)="retrieveUpcomingInvoice()">Upcoming Invoice</button>
+    </div>
+
+    <div class="my-4">
+        <app-plan-picker *ngIf="shouldShowPlanPicker && plan != 'not found'" [hiddenPlan]="plan" (selectedPlanEvent)="selectNewPlan($event)"></app-plan-picker>
+    </div>
+
+    <pre *ngIf="delSubsDetails" style="height: 300px;">Subscription details: {{delSubsDetails | json}}</pre>
+
+    <pre *ngIf="invoice" style="height: 300px;">Invoice: {{invoice | json}}</pre>
+</div>
